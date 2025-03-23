@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Digi Yatra - Flight Booking System</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="flow-section">
+    <button id="toggleFlow" class="toggle-btn">☰</button>
+    <div class="flow-content">
+      <h3>Flight Booking Flow</h3>
+      <ul>
+        <li>1. Search Flights</li>
+        <li>2. Select Flight</li>
+        <li>3. Passenger Details</li>
+        <li>4. Face Capture</li>
+        <li>5. Seat Selection</li>
+        <li>6. Verification</li>
+        <li>7. Boarding Pass</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div id="searchSection" class="section">
+      <h2>Search Flights</h2>
+      <form id="searchForm">
+        <select id="fromAirport" required>
+          <option value="">Select Departure Airport</option>
+        </select>
+        <select id="toAirport" required>
+          <option value="">Select Arrival Airport</option>
+        </select>
+        <input type="date" id="travelDate" required>
+        <button type="submit">Search Flights</button>
+      </form>
+    </div>
+
+    <div id="flightResults" class="section hidden"></div>
+
+    <div id="passengerDetails" class="section hidden">
+      <h2>Passenger Details</h2>
+      <form id="passengerForm">
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <div id="faceCapture">
+          <video id="video" width="400" height="300" autoplay></video>
+          <canvas id="canvas" width="400" height="300" style="display:none"></canvas>
+          <button type="button" id="captureBtn">Capture Face</button>
+        </div>
+        <button type="submit" id="submitPassenger">Submit</button>
+      </form>
+    </div>
+
+    <div id="seatLayout" class="section hidden">
+      <h2>Select Seat</h2>
+      <div id="seats"></div>
+      <button id="confirmSeat">Confirm Seat</button>
+    </div>
+
+    <div id="ticketSection" class="section hidden">
+      <h2>Ticket Confirmed</h2>
+      <button id="viewBoardingPass">View Boarding Pass</button>
+      <button id="checkIn">Check In</button>
+    </div>
+
+    <div id="verificationSection" class="section hidden">
+      <h2>Verify Identity</h2>
+      <video id="verifyVideo" width="400" height="300" autoplay></video>
+      <button id="verifyFace">Verify Face</button>
+    </div>
+
+    <div id="boardingPass" class="section hidden">
+      <h2>Boarding Pass</h2>
+      <div id="boardingPassContent"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
